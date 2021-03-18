@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 export default function Home({ users }) {
   const history = useHistory()
@@ -20,14 +20,12 @@ export default function Home({ users }) {
         </thead>
         <tbody className="user-table-body">
           {users.map((user, i) => (
-            <tr
-              key={`user-${i}`}
-              style={{ cursor: 'pointer' }}
-              onClick={() => history.push(`/user/${i}`)}
-            >
+            <tr key={`user-${i}`}>
               <th>{i + 1}</th>
               <td>
-                {user.name.first} {user.name.last}
+                <Link to={`/user/${i}`}>
+                  {user.name.first} {user.name.last}
+                </Link>
               </td>
               <td>{user.email}</td>
               <td>{user.location.city}</td>
