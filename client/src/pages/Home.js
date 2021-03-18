@@ -4,7 +4,7 @@ export default function Home({ users }) {
   const history = useHistory()
   return (
     <div className="container">
-      <h1 className="text-center mb-3 mb-lg-5">Clozd Coding Test</h1>
+      <h1 className="text-center mb-3 mb-lg-5">Clozd Code Test</h1>
       {users ? (
         <table
           className="table table-hover table-bordered"
