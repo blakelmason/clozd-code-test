@@ -35,8 +35,8 @@ async function startServer() {
     }
   })
 
-  server.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname + '/../build/index.html'))
+  server.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
   })
 
   server.listen(PORT, () => {
