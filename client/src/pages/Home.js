@@ -17,7 +17,7 @@ export default function Home({ users }) {
         <div className="display-6 text-center">Loading. . .</div>
       ) : (
         <table
-          className="table table-hover table-bordered"
+          className="table table-hover table-bordered shadow-sm"
           style={{ wordBreak: 'break-word' }}
         >
           <thead className="table-secondary">
