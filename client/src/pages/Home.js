@@ -6,7 +6,7 @@ export default function Home({ users }) {
     <div className="container">
       <h1 className="text-center mb-3 mb-lg-5">Clozd Code Test</h1>
       <table
-        className="table table-hover table-bordered"
+        className="table table-hover table-bordered bg-white shadow-sm"
         style={{ wordBreak: 'break-word' }}
       >
         <thead className="table-secondary">

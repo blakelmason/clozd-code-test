@@ -17,7 +17,7 @@ function App() {
   }, [])
 
   return (
-    <div className="py-5">
+    <div className="py-5 bg-light" style={{ minHeight: '100vh' }}>
       {users ? (
         <Switch>
           <Route path="/user">

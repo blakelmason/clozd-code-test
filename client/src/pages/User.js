@@ -8,7 +8,7 @@ export default function User({ user }) {
         <Link to="/">Home</Link>
       </div>
       <div className="d-flex justify-content-center">
-        <div className="d-lg-flex align-items-center justify-content-center border rounded shadow p-4">
+        <div className="d-lg-flex align-items-center justify-content-center border rounded shadow-sm p-4 bg-white">
           <div className="text-center text-lg-start">
             <img
               className="border rounded shadow-sm me-lg-3 mb-3 mb-lg-0"
