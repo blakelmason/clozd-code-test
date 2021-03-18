@@ -3,12 +3,13 @@ const fs = require('fs')
 const axios = require('axios')
 const express = require('express')
 
+const usersFileLocation = path.join(__dirname, 'users.json')
+
 startServer()
 
 async function startServer() {
   const server = express()
   const PORT = process.env.PORT || 5000
-  const usersFileLocation = path.join(__dirname, 'users.json')
 
   if (!fs.existsSync(usersFileLocation)) {
     try {
