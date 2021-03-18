@@ -1,33 +1,32 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Switch, Route, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import User from './pages/User'
 
 function App() {
   const [users, setUsers] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
-    axios
-      .get('https://randomuser.me/api/?results=2000')
-      .then((res) => setUsers(res.data.results))
+    getUsers()
+    async function getUsers() {
+      const res = await axios.get('/api/users')
+      setUsers(res.data)
+    }
   }, [])
-
-  console.log('hi')
 
   return (
     <div className="py-5">
       {users ? (
-        <Router>
-          <Switch>
-            <Route path="/user">
-              <User users={users} />
-            </Route>
-            <Route path="/">
-              <Home users={users} />
-            </Route>
-          </Switch>
-        </Router>
+        <Switch>
+          <Route path="/user">
+            <User user={users[location.pathname.split('/')[2]]} />
+          </Route>
+          <Route path="/">
+            <Home users={users} />
+          </Route>
+        </Switch>
       ) : (
         <div className="display-6 text-center">Loading...</div>
       )}

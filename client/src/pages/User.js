@@ -1,8 +1,6 @@
-import { useLocation, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-export default function User({ users }) {
-  const location = useLocation()
-  const user = users[location.pathname.split('/')[2]]
+export default function User({ user }) {
   return (
     <div className="container">
       <h1 className="text-center">User</h1>
